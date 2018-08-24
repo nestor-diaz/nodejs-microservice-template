@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-microservice-template",
+  "version": "1.0.0",
+  "description": "A NodeJS microservice template",
+  "main": "main.js",
+  "scripts": {
+    "start": "node .",
+    "start:dev": "nodemon .",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
+  },
+  "author": "Néstor Diaz",
+  "license": "MIT",
+  "dependencies": {
+    "awilix": "^3.0.9",
+    "body-parser": "^1.18.3",
+    "config": "^2.0.1",
+    "express": "^4.16.3",
+    "expressify": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "nodemon": "^1.18.3"
+  }
+}
