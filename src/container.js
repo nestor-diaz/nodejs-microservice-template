@@ -10,6 +10,7 @@ container.loadModules([
   'src/controllers/**/*.js',
   'src/routes/**/*.js',
   'src/services/**/*.js',
+  'src/utils/**/*.js',
 ], {
   resolverOptions: {
     register: asFunction,
