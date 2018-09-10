@@ -12,15 +12,22 @@ rules:
     linebreak-style:
         - 2
     no-use-before-define: off
-    no-multiple-empty-lines:
-        - max: 1
-        - maxEOF: 0
-    padding-line-between-statements:
-        - error
-        - blankLine: always
-        - prev: const
-        - next: return
-
+    no-multiple-empty-lines: [
+        "error",
+        {
+            max: 2,
+            maxBOF: 0,
+            maxEOF: 0
+        }
+    ]
+    padding-line-between-statements: [
+        "error",
+        {
+            blankLine: "always",
+            prev: ["const", "let", "var"],
+            next: "return"
+        }
+    ]
     jest/no-disabled-tests:
         - warn
     jest/no-focused-tests:

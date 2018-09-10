@@ -3,7 +3,7 @@ function mainController({ mainService }) {
     get,
   };
 
-  async function get(req = {}, res) {
+  async function get(req, res) {
     const getResponse = await mainService.get();
 
     return res.json(getResponse);
