@@ -1,7 +1,7 @@
 # nodejs-microservice-template
 [![Build Status](https://travis-ci.org/ndiaz-candido/nodejs-microservice-template.svg?branch=master)](https://travis-ci.org/ndiaz-candido/nodejs-microservice-template)
 
-A simple NodeJS service template
+A NodeJS service template
 
 - Express
 - Awilix
