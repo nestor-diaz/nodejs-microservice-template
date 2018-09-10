@@ -7,7 +7,25 @@
     "start": "node .",
     "start:dev": "nodemon .",
     "lint": "eslint src",
-    "lint:fix": "eslint src --fix"
+    "lint:fix": "eslint src --fix",
+    "test": "jest"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src/",
+      "<rootDir>/tests/"
+    ],
+    "setupFiles": [
+      "<rootDir>/tests/setup.js"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!**/logger.js",
+      "!**/{config}/**",
+      "!**/node_modules/**",
+      "!**/coverage/**"
+    ]
   },
   "author": "Néstor Diaz",
   "license": "MIT",
@@ -18,13 +36,15 @@
     "config": "^2.0.1",
     "express": "^4.16.3",
     "express-winston": "^3.0.0",
-    "expressify": "^2.0.0",
     "winston": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^5.4.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "nodemon": "^1.18.3"
+    "eslint-plugin-jest": "^21.22.0",
+    "jest": "^23.5.0",
+    "nodemon": "^1.18.3",
+    "supertest": "^3.3.0"
   }
 }

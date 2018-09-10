@@ -1,8 +1,8 @@
 const customEnvVariables = {
   express: {
     host: 'HOSTNAME',
-    port: 'PORT'
-  }
+    port: 'PORT',
+  },
 };
 
 module.exports = customEnvVariables;

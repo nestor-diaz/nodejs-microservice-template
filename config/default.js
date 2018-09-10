@@ -1,4 +1,4 @@
-const config = {
+const defaultConfig = {
   express: {
     host: 'localhost',
     port: '8088',
@@ -7,7 +7,6 @@ const config = {
     exitOnError: false,
     transports: {
       console: {
-        enabled: true,
         level: 'info',
         timestamp: true,
         prettyPrint: true,
@@ -18,4 +17,4 @@ const config = {
   },
 };
 
-module.exports = config;
+module.exports = defaultConfig;
