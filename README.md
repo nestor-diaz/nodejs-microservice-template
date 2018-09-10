@@ -5,9 +5,14 @@ A simple NodeJS service template
 - Express
 - Awilix
 - Winston
+- Jest
 
 ## Getting started
-### Build for local development
+### Requirements
+- Node 8
+- Npm 5
+
+### Local development
 
 You have to use the following command to start a development server (nodemon):
 
@@ -17,4 +22,10 @@ npm install
 
 ```sh
 npm run start:dev
+```
+
+### Unit tests
+
+```sh
+npm test
 ```
