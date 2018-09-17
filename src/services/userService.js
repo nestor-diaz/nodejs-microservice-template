@@ -1,4 +1,6 @@
-function mainService() {
+function userService() {
+  const collectionName = 'Users';
+
   return {
     get: () => new Promise((resolve) => {
       setTimeout(() => {
@@ -26,4 +28,4 @@ function mainService() {
   };
 }
 
-module.exports = mainService;
+module.exports = userService;
