@@ -8,6 +8,6 @@ describe('mainService', () => {
   test('should get a promise from the get method', async () => {
     const getValue = await mainService.get();
 
-    expect(getValue).toEqual({ GET: 'Main Controller / Service response' });
+    expect(getValue).toEqual({ GET: 'Main Service / GET response' });
   });
 });
