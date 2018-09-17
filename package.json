@@ -4,6 +4,7 @@
   "description": "A NodeJS microservice template",
   "main": "main.js",
   "scripts": {
+    "build": "sh ./scripts/build.sh",
     "start": "node .",
     "start:dev": "nodemon .",
     "lint": "eslint src",
