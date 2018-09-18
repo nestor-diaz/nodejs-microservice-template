@@ -3,6 +3,7 @@ const {
 } = require('awilix');
 const config = require('config');
 const mongoose = require('mongoose');
+const httpCodes = require('http-status-codes');
 const microservice = require('./microservice');
 
 const container = createContainer();
@@ -25,6 +26,7 @@ container.register({
   microservice: asFunction(microservice),
   config: asValue(config),
   mongoose: asFunction(() => mongoose),
+  httpCodes: asFunction(() => httpCodes),
 });
 
 module.exports = container;

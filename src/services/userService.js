@@ -22,13 +22,13 @@ function userService({ userRepository }) {
   }
 
   function updateOne(id, user) {
-    const updatedUser = { ...user, _id: id, updated: true };
+    const updatedUser = { ...user, updated: true };
 
-    return userRepository.updateOne(updatedUser);
+    return userRepository.updateOne(id, updatedUser);
   }
 
-  function deleteOne() {
-    return deleteOne.deleteOne();
+  function deleteOne(id) {
+    return userRepository.deleteOne(id);
   }
 }
 

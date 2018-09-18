@@ -7,7 +7,7 @@ function apiV1Router({ userController }) {
     .get('/users', userController.list)
     .get('/users/:id', userController.getUserById)
     .post('/users', userController.createUser)
-    .put('/users/:id', userController.updateUser)
+    .patch('/users/:id', userController.updateUser)
     .delete('/users/:id', userController.deleteUser));
 }
 

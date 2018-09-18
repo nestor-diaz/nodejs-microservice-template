@@ -1,4 +1,4 @@
-function mainController({ userService }) {
+function mainController({ userService, httpCodes }) {
   return {
     list,
     getUserById,
@@ -54,9 +54,9 @@ function mainController({ userService }) {
   async function updateUser(req, res) {
     const updatedUser = req.body;
     const { id } = req.params;
-    const updatedUserResult = await userService.updateOne(id, updatedUser);
+    const result = await userService.updateOne(id, updatedUser);
 
-    return res.json(updatedUserResult);
+    return res.json(result);
   }
 
   /**
@@ -66,10 +66,10 @@ function mainController({ userService }) {
    * @param {Object} res Express response object.
    */
   async function deleteUser(req, res) {
-    const { id } = req.body;
-    const deletedUser = await userService.deleteOne(id);
+    const { id } = req.params;
+    const result = await userService.deleteOne(id);
 
-    return res.json(deletedUser);
+    return res.json(result);
   }
 }
 

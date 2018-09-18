@@ -19,11 +19,13 @@ function userRepository({ userModel }) {
     return userModel.create(user);
   }
 
-  function updateOne(user) {
-    return userModel.updateOne(user);
+  function updateOne(id, user) {
+    return userModel.updateOne({ _id: id }, user);
   }
 
-  function deleteOne() {}
+  function deleteOne(id) {
+    return userModel.deleteOne({ _id: id });
+  }
 }
 
 module.exports = userRepository;
