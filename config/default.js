@@ -3,6 +3,13 @@ const defaultConfig = {
     host: 'localhost',
     port: '8088',
   },
+  mongo: {
+    user: '',
+    pass: '',
+    host: '',
+    port: '',
+    database: '',
+  },
   logger: {
     exitOnError: false,
     transports: {

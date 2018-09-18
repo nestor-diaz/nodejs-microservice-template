@@ -1,4 +1,4 @@
-function mainController({ mainService }) {
+function mainController({ userService }) {
   return {
     list,
     getUserById,
@@ -7,32 +7,68 @@ function mainController({ mainService }) {
     deleteUser,
   };
 
-  async function list() {
-    return Promise.resolve([]);
+  /**
+   * Get all available users.
+   *
+   * @param {Object} req Express request object.
+   * @param {Object} res Express response object.
+   */
+  function list(req, res) {
+    const all = userService.getAll();
+
+    return res.send(all);
   }
 
+  /**
+   * Get user by id.
+   *
+   * @param {Object} req Express request object.
+   * @param {Object} res Express response object.
+   */
   async function getUserById(req, res) {
-    const getResponse = await mainService.get();
+    const { id } = req.query;
+    const user = await userService.getOneById(id);
 
-    return res.json(getResponse);
+    return res.json(user);
   }
 
+  /**
+   * Create user.
+   *
+   * @param {Object} req Express request object.
+   * @param {Object} res Express response object.
+   */
   async function createUser(req, res) {
-    const postResponse = await mainService.get();
+    const { user } = req.body;
+    const newUser = await userService.createOne(user);
 
-    return res.json(postResponse);
+    return res.json(newUser);
   }
 
+  /**
+   * Update user.
+   *
+   * @param {Object} req Express request object.
+   * @param {Object} res Express response object.
+   */
   async function updateUser(req, res) {
-    const putResponse = await mainService.get();
+    const { user } = req.body;
+    const updatedUser = await userService.updateOne(user);
 
-    return res.json(putResponse);
+    return res.json(updatedUser);
   }
 
+  /**
+   * Delete user.
+   *
+   * @param {Object} req Express request object.
+   * @param {Object} res Express response object.
+   */
   async function deleteUser(req, res) {
-    const deleteResponse = await mainService.get();
+    const { id } = req.body;
+    const deletedUser = await userService.deleteOne(id);
 
-    return res.json(deleteResponse);
+    return res.json(deletedUser);
   }
 }
 
