@@ -7,13 +7,21 @@ function userRepository({ userModel }) {
     deleteOne,
   };
 
-  function getAll() {}
+  function getAll() {
+    return userModel.find({});
+  }
 
-  function getOneById() {}
+  function getOneById(id) {
+    return userModel.findById(id);
+  }
 
-  function addOne() {}
+  function addOne(user) {
+    return userModel.create(user);
+  }
 
-  function updateOne() {}
+  function updateOne(user) {
+    return userModel.updateOne(user);
+  }
 
   function deleteOne() {}
 }

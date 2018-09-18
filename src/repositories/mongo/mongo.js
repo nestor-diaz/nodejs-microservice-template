@@ -13,10 +13,10 @@ function mongo({ mongoose, config }) {
     } = config.mongo;
     const connectionString = `mongodb://${user}:${pass}@${host}:${port}/${database}`;
 
-    mongoose.connect(connectionString, { useNewUrlParser: true });
+    mongoose.connect(connectionString);
 
     return new Promise((resolve, reject) => {
-      mongoose.connection.on('error', reject(new Error('Error stablishing connection to MongoDB')));
+      mongoose.connection.on('error', reject);
       mongoose.connection.once('open', resolve);
     });
   }

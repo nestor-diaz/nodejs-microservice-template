@@ -13,8 +13,8 @@ function mainController({ userService }) {
    * @param {Object} req Express request object.
    * @param {Object} res Express response object.
    */
-  function list(req, res) {
-    const all = userService.getAll();
+  async function list(req, res) {
+    const all = await userService.getAll();
 
     return res.send(all);
   }
@@ -26,7 +26,7 @@ function mainController({ userService }) {
    * @param {Object} res Express response object.
    */
   async function getUserById(req, res) {
-    const { id } = req.query;
+    const { id } = req.params;
     const user = await userService.getOneById(id);
 
     return res.json(user);
@@ -39,7 +39,7 @@ function mainController({ userService }) {
    * @param {Object} res Express response object.
    */
   async function createUser(req, res) {
-    const { user } = req.body;
+    const user = req.body;
     const newUser = await userService.createOne(user);
 
     return res.json(newUser);
@@ -52,10 +52,11 @@ function mainController({ userService }) {
    * @param {Object} res Express response object.
    */
   async function updateUser(req, res) {
-    const { user } = req.body;
-    const updatedUser = await userService.updateOne(user);
+    const updatedUser = req.body;
+    const { id } = req.params;
+    const updatedUserResult = await userService.updateOne(id, updatedUser);
 
-    return res.json(updatedUser);
+    return res.json(updatedUserResult);
   }
 
   /**

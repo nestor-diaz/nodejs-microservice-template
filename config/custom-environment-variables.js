@@ -5,7 +5,7 @@ const customEnvVariables = {
   },
   mongo: {
     user: 'MONGO_USER',
-    pass: 'MONGO_USER_PASS',
+    pass: 'MONGO_PWD',
     host: 'MONGO_HOST',
     port: 'MONGO_PORT',
     database: 'MONGO_DB',

@@ -11,16 +11,20 @@ function userService({ userRepository }) {
     return userRepository.getAll();
   }
 
-  function getOneById() {
-    return userRepository.getOneById();
+  function getOneById(id) {
+    return userRepository.getOneById(id);
   }
 
-  function createOne() {
-    return userRepository.addOne();
+  function createOne(user) {
+    const inactiveUser = { ...user, active: false };
+
+    return userRepository.addOne(inactiveUser);
   }
 
-  function updateOne() {
-    return userRepository.updateOne();
+  function updateOne(id, user) {
+    const updatedUser = { ...user, _id: id, updated: true };
+
+    return userRepository.updateOne(updatedUser);
   }
 
   function deleteOne() {

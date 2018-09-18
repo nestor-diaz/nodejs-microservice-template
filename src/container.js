@@ -24,7 +24,7 @@ container.loadModules([
 container.register({
   microservice: asFunction(microservice),
   config: asValue(config),
-  mongoose: asFunction(mongoose),
+  mongoose: asFunction(() => mongoose),
 });
 
 module.exports = container;

@@ -5,10 +5,10 @@ function apiV1Router({ userController }) {
 
     // Users endpoints
     .get('/users', userController.list)
-    .get('/users/:id', userController.getUserByIde)
+    .get('/users/:id', userController.getUserById)
     .post('/users', userController.createUser)
-    .put('/users', userController.updateUser)
-    .delete('/users', userController.deleteUser));
+    .put('/users/:id', userController.updateUser)
+    .delete('/users/:id', userController.deleteUser));
 }
 
 module.exports = apiV1Router;
