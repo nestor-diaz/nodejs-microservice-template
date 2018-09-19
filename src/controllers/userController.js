@@ -1,4 +1,4 @@
-function mainController({ userService, httpCodes }) {
+function mainController({ userService }) {
   return {
     list,
     getUserById,
@@ -10,7 +10,7 @@ function mainController({ userService, httpCodes }) {
   async function list(req, res) {
     const all = await userService.getAll();
 
-    return res.send(all);
+    return res.json(all);
   }
 
   async function getUserById(req, res) {
