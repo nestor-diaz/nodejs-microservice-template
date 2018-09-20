@@ -1,0 +1,40 @@
+version: '3'
+services:
+  microservice:
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    ports:
+      - "9090:9090"
+    volumes:
+      - .:/usr/src/service/
+      - /usr/src/service/node_modules
+    environment:
+      - NODE_ENV=development
+      - PORT=9090
+      - MONGODB_USER=admin
+      - MONGODB_PASS=admin
+      - MONGODB_HOST=mongodb
+      - MONGODB_PORT=27017
+      - MONGODB_DB=test
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    environment:
+      - MONGO_INITDB_DATABASE=test
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    volumes:
+      - mongo-db:/data/db
+      - mongo-config:/data/configdb
+    ports:
+        - 27017:27017
+
+volumes:
+  mongo-db:
+  mongo-config:

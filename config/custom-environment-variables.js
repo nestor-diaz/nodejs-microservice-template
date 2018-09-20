@@ -4,11 +4,11 @@ const customEnvVariables = {
     port: 'PORT',
   },
   mongo: {
-    user: 'MONGO_USER',
-    pass: 'MONGO_PWD',
-    host: 'MONGO_HOST',
-    port: 'MONGO_PORT',
-    database: 'MONGO_DB',
+    user: 'MONGODB_USER',
+    pass: 'MONGODB_PASS',
+    host: 'MONGODB_HOST',
+    port: 'MONGODB_PORT',
+    database: 'MONGODB_DB',
   },
 };
 

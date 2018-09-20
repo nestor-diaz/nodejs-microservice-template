@@ -5,6 +5,10 @@
   "main": "main.js",
   "scripts": {
     "build": "sh ./scripts/build.sh",
+    "containers:start": "docker-compose -f dev.Compose.yml up",
+    "containers:build": "docker-compose -f dev.Compose.yml build",
+    "containers:remove": "docker-compose -f dev.Compose.yml down",
+    "containers:stop": "docker-compose -f dev.Compose.yml stop",
     "start": "node .",
     "start:dev": "nodemon .",
     "lint": "eslint src",
