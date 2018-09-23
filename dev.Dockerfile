@@ -7,6 +7,6 @@ WORKDIR /usr/src/service
 
 COPY dist /usr/src/service/
 
-EXPOSE 8080
+EXPOSE 8090
 
-CMD ["bash", "-c", "PORT=8080 nodemon main.js"]
+CMD ["bash", "-c", "nodemon main.js"]

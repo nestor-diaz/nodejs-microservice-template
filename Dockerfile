@@ -6,6 +6,6 @@ WORKDIR /usr/src/service
 
 COPY dist /usr/src/service/
 
-EXPOSE 8080
+EXPOSE 8090
 
-CMD ["bash", "-c", "PORT=8081 node main.js"]
+CMD ["bash", "-c", "node main.js"]

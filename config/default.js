@@ -1,13 +1,13 @@
 const defaultConfig = {
   express: {
     host: 'localhost',
-    port: '8088',
+    port: '8090',
   },
   mongo: {
     user: '',
     pass: '',
     host: '',
-    port: '',
+    port: '27017',
     database: '',
   },
   logger: {
