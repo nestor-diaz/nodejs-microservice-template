@@ -13,7 +13,7 @@ function mongo({ mongoose, config }) {
     } = config.mongo;
     const connectionString = `mongodb://${user}:${pass}@${host}:${port}/${database}`;
 
-    mongoose.connect(connectionString);
+    mongoose.connect(connectionString, { useNewUrlParser: true });
 
     return new Promise((resolve, reject) => {
       mongoose.connection.on('error', reject);
