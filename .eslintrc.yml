@@ -28,7 +28,7 @@ rules:
             next: "return"
         }
     ]
-    func-names: 0,
+    func-names: 0
     jest/no-disabled-tests:
         - warn
     jest/no-focused-tests:

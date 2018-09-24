@@ -5,15 +5,18 @@
   "main": "main.js",
   "scripts": {
     "build": "sh ./scripts/build.sh",
-    "containers:start": "docker-compose -f dev.Compose.yml up",
-    "containers:build": "npm run build && docker-compose -f dev.Compose.yml build",
+    "containers:start": "npm-run-all -s build compose:start",
+    "containers:build": "npm-run-all -s build compose:build",
     "containers:remove": "docker-compose -f dev.Compose.yml down",
     "containers:stop": "docker-compose -f dev.Compose.yml stop",
+    "compose:start": "docker-compose -f dev.Compose.yml up",
+    "compose:build": "docker-compose -f dev.Compose.yml build",
     "start": "node .",
     "start:dev": "nodemon .",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
-    "test": "jest"
+    "test": "npm-run-all -s lint jest",
+    "jest": "jest"
   },
   "jest": {
     "roots": [
@@ -53,6 +56,7 @@
     "eslint-plugin-jest": "^21.22.0",
     "jest": "^23.5.0",
     "nodemon": "^1.18.3",
+    "npm-run-all": "^4.1.3",
     "supertest": "^3.3.0"
   }
 }
