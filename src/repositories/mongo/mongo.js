@@ -4,15 +4,7 @@ function mongo({ mongoose, config }) {
   };
 
   function connect() {
-    const {
-      user,
-      pass,
-      host,
-      port,
-      database,
-    } = config.mongo;
-    const connectionString = `mongodb://${user}:${pass}@${host}:${port}/${database}`;
-
+    const { connectionString } = config.mongo;
     mongoose.connect(connectionString, { useNewUrlParser: true });
 
     return new Promise((resolve, reject) => {

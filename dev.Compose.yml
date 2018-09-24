@@ -5,12 +5,12 @@ services:
       context: .
       dockerfile: dev.Dockerfile
     ports:
-      - "8090:890"
+      - "8090:8090"
     volumes:
       - .:/usr/src/service/
       - /usr/src/service/node_modules
     environment:
-      - NODE_ENV=development
+      - MONGODB_HOST=mongodb
     links:
       - mongodb
     depends_on:

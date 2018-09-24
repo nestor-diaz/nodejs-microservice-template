@@ -1,3 +1,5 @@
+const defer = require('config/defer').deferConfig;
+
 const defaultConfig = {
   express: {
     host: 'localhost',
@@ -9,6 +11,9 @@ const defaultConfig = {
     host: '',
     port: '27017',
     database: '',
+    connectionString: defer(function () {
+      return `mongodb://${this.mongo.user}:${this.mongo.pass}@${this.mongo.host}:${this.mongo.port}/${this.mongo.database}`;
+    }),
   },
 };
 
