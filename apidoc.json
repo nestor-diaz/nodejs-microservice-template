@@ -1,0 +1,8 @@
+{
+  "name": "microservice-template",
+  "version": "1.0.0",
+  "description": "Microservice API documentation",
+  "template": {
+    "forceLanguage": "en"
+  }
+}

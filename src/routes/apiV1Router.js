@@ -4,7 +4,7 @@ function apiV1Router({ userController }) {
   return express.Router().use('/api/v1', express.Router()
 
     // Users endpoints
-    .get('/users', userController.list)
+    .get('/users', userController.all)
     .get('/users/:id', userController.getUserById)
     .post('/users', userController.createUser)
     .patch('/users/:id', userController.updateUser)

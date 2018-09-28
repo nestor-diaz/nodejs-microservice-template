@@ -1,18 +1,60 @@
 function mainController({ userService }) {
   return {
-    list,
+    all,
     getUserById,
     createUser,
     updateUser,
     deleteUser,
   };
 
-  async function list(req, res) {
-    const all = await userService.getAll();
+  /**
+    * @api {get} /users List all users
+    * @apiGroup Users
+    * @apiSuccess {Object[]} users User list
+    * @apiSuccess {Number} users.id User id
+    * @apiSuccess {String} users.firstName User's first name
+    * @apiSuccess {String} users.lastName User's last name
+    * @apiSuccess {String} users.email User's email
+    * @apiSuccess {Boolean} users.active Is user active?
+    * @apiSuccess {Boolean} users.updated Is user updated?
+    * @apiVersion 1.0.0
+    * @apiSuccessExample {json} Success
+    *    HTTP/1.1 200 OK
+    *    [{
+    *      "id": 1,
+    *      "firstName": "Pedro",
+    *      "lastName": "Nel",
+    *      "email": "nel@hero.com"
+    *      "active": false,
+    *      "updated": false
+    *    }]
+    * @apiErrorExample {json} List error
+    *    HTTP/1.1 500 Internal Server Error
+    */
+  async function all(req, res) {
+    const allUsers = await userService.getAll();
 
-    return res.json(all);
+    return res.json(allUsers);
   }
 
+  /**
+    * @api {get} /users/:id Get user by id
+    * @apiGroup Users
+    * @apiSuccess {Object} user An user
+    * @apiVersion 1.0.0
+    * @apiSuccessExample {json} Success
+    *    HTTP/1.1 200 OK
+    *    [{
+    *      "id": 1,
+    *      "firstName": "Pedro",
+    *      "lastName": "Nel",
+    *      "email": "nel@hero.com"
+    *      "active": false,
+    *      "updated": false
+    *    }]
+    * @apiErrorExample {json} List error
+    *    HTTP/1.1 500 Internal Server Error
+    */
   async function getUserById(req, res) {
     const { id } = req.params;
     const user = await userService.getOneById(id);
