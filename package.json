@@ -40,6 +40,7 @@
   "dependencies": {
     "awilix": "^3.0.9",
     "body-parser": "^1.18.3",
+    "boom": "^7.2.0",
     "chalk": "^2.4.1",
     "config": "^2.0.1",
     "dotenv": "^6.0.0",

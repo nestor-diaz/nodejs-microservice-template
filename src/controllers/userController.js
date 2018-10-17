@@ -1,4 +1,4 @@
-function mainController({ userService }) {
+function mainController({ userService, httpErrors }) {
   return {
     all,
     getUserById,
@@ -13,11 +13,11 @@ function mainController({ userService }) {
     return res.json(allUsers);
   }
 
-  async function getUserById(req, res) {
+  async function getUserById(req, res, next) {
     const { id } = req.params;
     const user = await userService.getOneById(id);
 
-    return res.json(user);
+    return user ? res.json(user) : next(httpErrors.notFound('User not found'));
   }
 
   async function createUser(req, res) {
@@ -27,12 +27,16 @@ function mainController({ userService }) {
     return res.json(newUser);
   }
 
-  async function updateUser(req, res) {
+  async function updateUser(req, res, next) {
     const updatedUser = req.body;
     const { id } = req.params;
     const result = await userService.updateOne(id, updatedUser);
 
-    return res.json(result);
+    if (result && result.n) {
+      return res.json(result);
+    }
+
+    return next(httpErrors.notFound('User not found'));
   }
 
   async function deleteUser(req, res) {

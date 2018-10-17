@@ -4,6 +4,7 @@ const {
 const config = require('config');
 const mongoose = require('mongoose');
 const httpCodes = require('http-status-codes');
+const boom = require('boom');
 const microservice = require('./microservice');
 
 const container = createContainer();
@@ -27,6 +28,7 @@ container.register({
   config: asValue(config),
   mongoose: asFunction(() => mongoose),
   httpCodes: asFunction(() => httpCodes),
+  httpErrors: asFunction(() => boom),
 });
 
 module.exports = container;
