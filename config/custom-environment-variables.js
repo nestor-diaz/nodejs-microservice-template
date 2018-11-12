@@ -3,12 +3,11 @@ const customEnvVariables = {
     host: 'HOSTNAME',
     port: 'PORT',
   },
-  mongo: {
-    user: 'MONGODB_USER',
-    pass: 'MONGODB_PASS',
-    host: 'MONGODB_HOST',
-    port: 'MONGODB_PORT',
-    database: 'MONGODB_DB',
+  postgres: {
+    user: 'POSTGRES_USER',
+    pass: 'POSTGRES_PASSWORD',
+    db: 'POSTGRES_DB',
+    host: 'POSTGRES_HOST',
   },
 };
 

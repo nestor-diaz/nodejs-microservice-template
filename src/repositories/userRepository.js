@@ -1,4 +1,4 @@
-function userRepository({ userModel }) {
+function userRepository() {
   return {
     getAll,
     getOneById,
@@ -8,23 +8,23 @@ function userRepository({ userModel }) {
   };
 
   function getAll() {
-    return userModel.find({});
+    return [];
   }
 
-  function getOneById(id) {
-    return userModel.findById(id);
+  function getOneById() {
+    return {};
   }
 
-  function addOne(user) {
-    return userModel.create(user);
+  function addOne() {
+    return {};
   }
 
-  function updateOne(id, user) {
-    return userModel.updateOne({ _id: id }, user);
+  function updateOne() {
+    return {};
   }
 
-  function deleteOne(id) {
-    return userModel.deleteOne({ _id: id });
+  function deleteOne() {
+    return {};
   }
 }
 

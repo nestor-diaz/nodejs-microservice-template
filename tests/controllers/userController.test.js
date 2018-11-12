@@ -20,7 +20,7 @@ describe('userController', () => {
   test('should return a list of users', async () => {
     userService.getAll = jest.fn().mockResolvedValue(mockUsers);
 
-    await userController.list({}, res);
+    await userController.all({}, res);
 
     expect(res.json).toHaveBeenCalledWith(mockUsers);
   });
@@ -54,7 +54,7 @@ describe('userController', () => {
       params: { id: '12345' },
       body: mockUsers[0],
     };
-    const result = { ok: 1 };
+    const result = { n: 1 };
 
     userService.updateOne = jest.fn().mockResolvedValue(result);
 

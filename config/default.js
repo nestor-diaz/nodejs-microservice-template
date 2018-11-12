@@ -1,19 +1,13 @@
-const defer = require('config/defer').deferConfig;
-
 const defaultConfig = {
   express: {
     host: 'localhost',
-    port: '8090',
+    port: '4000',
   },
-  mongo: {
+  postgres: {
     user: '',
     pass: '',
+    db: '',
     host: '',
-    port: '27017',
-    database: '',
-    connectionString: defer(function () {
-      return `mongodb://${this.mongo.host}:${this.mongo.port}`
-    }),
   },
   logger: {
     exitOnError: false,

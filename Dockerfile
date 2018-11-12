@@ -6,6 +6,6 @@ WORKDIR /usr/src/service
 
 COPY dist /usr/src/service/
 
-EXPOSE 8090
+EXPOSE 4000
 
 CMD ["bash", "-c", "node main.js"]

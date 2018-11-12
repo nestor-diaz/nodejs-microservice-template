@@ -5,28 +5,31 @@ services:
       context: .
       dockerfile: dev.Dockerfile
     ports:
-      - "8090:8090"
+      - "4000:4000"
     volumes:
       - .:/usr/src/service/
       - /usr/src/service/node_modules
     environment:
-      - MONGODB_HOST=microservice-mongodb
+      - POSTGRES_HOST=template-postgres
+      - POSTGRES_USER=pguser
+      - POSTGRES_PASSWORD=pguser
+      - POSTGRES_DB=template_db
     links:
-      - microservice-mongodb
+      - template-postgres
     depends_on:
-      - microservice-mongodb
+      - template-postgres
 
-  microservice-mongodb:
-    image: mongo:latest
-    container_name: "microservice-mongodb"
+  template-postgres:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=pguser
+      - POSTGRES_PASSWORD=pguser
+      - POSTGRES_DB=template_db
     volumes:
-      - mongo-db:/data/db
-      - mongo-config:/data/configdb
+      - template_postgres_data:/var/lib/postgresql/data
     ports:
-        - 27017:27017
-    logging:
-      driver: none
+      - 5432:5432
 
 volumes:
-  mongo-db:
-  mongo-config:
+  template_postgres_data:
