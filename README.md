@@ -7,6 +7,8 @@ A NodeJS service template
 - Awilix
 - Winston
 - Jest
+- Postgres
+- Sequelize
 
 ## Getting started
 ### Requirements
