@@ -1,14 +1,14 @@
 const express = require('express');
 
-function apiV1Router({ userController }) {
+function apiV1Router({ authorController }) {
   return express.Router().use('/api/v1', express.Router()
 
-    // Users endpoints
-    .get('/users', userController.all)
-    .get('/users/:id', userController.getUserById)
-    .post('/users', userController.createUser)
-    .patch('/users/:id', userController.updateUser)
-    .delete('/users/:id', userController.deleteUser));
+    // Authors endpoints
+    .get('/authors', authorController.all)
+    .get('/authors/:id', authorController.getOneById)
+    .post('/authors', authorController.createOne)
+    .patch('/authors/:id', authorController.updateOne)
+    .delete('/authors/:id', authorController.deleteOne));
 }
 
 module.exports = apiV1Router;

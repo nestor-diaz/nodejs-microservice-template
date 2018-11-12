@@ -9,4 +9,4 @@ COPY dist /usr/src/service/
 
 EXPOSE 4000
 
-CMD ["bash", "-c", "nodemon main.js"]
+CMD ["bash", "-c", "nodemon --inspect=0.0.0.0:4001 main.js"]
