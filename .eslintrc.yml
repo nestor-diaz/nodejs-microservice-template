@@ -1,38 +1,23 @@
 extends:
-    - airbnb-base
+  - airbnb-base
 
 plugins:
-    - import
-    - jest
+  - import
+  - jest
 
 env:
-    jest/globals: true
+  jest/globals: true
 
 rules:
-    linebreak-style:
-        - 2
-    no-use-before-define: off
-    no-multiple-empty-lines: [
-        "error",
-        {
-            max: 2,
-            maxBOF: 0,
-            maxEOF: 0
-        }
-    ]
-    padding-line-between-statements: [
-        "error",
-        {
-            blankLine: "always",
-            prev: ["const", "let", "var"],
-            next: "return"
-        }
-    ]
-    func-names: 0
-    jest/no-disabled-tests:
-        - warn
-    jest/no-focused-tests:
-        - error
+  linebreak-style: 'windows'
+  no-use-before-define: off
+  no-multiple-empty-lines: ['error', { max: 2, maxBOF: 0, maxEOF: 0 }]
+  padding-line-between-statements: ['error', { blankLine: 'always', prev: ['const', 'let', 'var'], next: 'return' }]
+  func-names: 0
+  jest/no-disabled-tests:
+    - warn
+  jest/no-focused-tests:
+    - error
 
 globals:
-    container: true
+  container: true

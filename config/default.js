@@ -4,10 +4,11 @@ const defaultConfig = {
     port: '4000',
   },
   postgres: {
-    user: '',
-    pass: '',
-    db: '',
-    host: '',
+    user: 'postgres',
+    password: 'Password.p1',
+    database: 'vacancies',
+    host: 'localhost',
+    port: 5433,
   },
   logger: {
     exitOnError: false,

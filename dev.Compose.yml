@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: dev.Dockerfile
     ports:
-      - "4000:4000"
+      - '4000:4000'
     volumes:
       - .:/usr/src/service/
       - /usr/src/service/node_modules
@@ -29,7 +29,7 @@ services:
     volumes:
       - template_postgres_data:/var/lib/postgresql/data
     ports:
-      - 5432:5432
+      - 5433:5433
 
 volumes:
   template_postgres_data:

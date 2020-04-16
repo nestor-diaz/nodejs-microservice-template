@@ -1,26 +1,27 @@
-const {
-  createContainer, Lifetime, asFunction, asValue,
-} = require('awilix');
+const { createContainer, Lifetime, asFunction, asValue } = require('awilix');
 const config = require('config');
 const httpCodes = require('http-status-codes');
-const boom = require('boom');
+const boom = require('@hapi/boom');
 const microservice = require('./microservice');
 
 const container = createContainer();
 
-container.loadModules([
-  'src/controllers/**/*.js',
-  'src/repositories/**/*.js',
-  'src/repositories/postgres/**/*.js',
-  'src/routes/**/*.js',
-  'src/services/**/*.js',
-  'src/utils/**/*.js',
-], {
-  resolverOptions: {
-    register: asFunction,
-    lifetime: Lifetime.SINGLETON,
-  },
-});
+container.loadModules(
+  [
+    'src/controllers/**/*.js',
+    'src/repositories/**/*.js',
+    'src/repositories/postgres/**/*.js',
+    'src/routes/**/*.js',
+    'src/services/**/*.js',
+    'src/utils/**/*.js',
+  ],
+  {
+    resolverOptions: {
+      register: asFunction,
+      lifetime: Lifetime.SINGLETON,
+    },
+  }
+);
 
 container.register({
   microservice: asFunction(microservice),
