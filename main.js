@@ -1,4 +1,4 @@
-//require('dotenv').config();
+require('dotenv').config();
 const container = require('./src/container');
 
 const config = container.resolve('config');
