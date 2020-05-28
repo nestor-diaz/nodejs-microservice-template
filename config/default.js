@@ -5,9 +5,10 @@ const defaultConfig = {
   },
   postgres: {
     user: '',
-    pass: '',
-    db: '',
+    password: '',
+    database: '',
     host: '',
+    port: ,
   },
   logger: {
     exitOnError: false,

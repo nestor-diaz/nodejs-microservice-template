@@ -4,10 +4,11 @@ const customEnvVariables = {
     port: 'PORT',
   },
   postgres: {
-    user: 'POSTGRES_USER',
-    pass: 'POSTGRES_PASSWORD',
-    db: 'POSTGRES_DB',
-    host: 'POSTGRES_HOST',
+    user: 'postgres',
+    password: 'Password.p1',
+    database: 'vacancies',
+    host: 'localhost',
+    port: '5433',
   },
 };
 

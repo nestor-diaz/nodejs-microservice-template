@@ -1,4 +1,4 @@
-const boom = require('boom');
+const boom = require('@hapi/boom');
 
 // eslint-disable-next-line
 function errorMiddleware(err, req, res, next) {
@@ -8,7 +8,10 @@ function errorMiddleware(err, req, res, next) {
     error = boom.internal(err);
   }
 
-  const { output: { payload, statusCode }, message } = error;
+  const {
+    output: { payload, statusCode },
+    message,
+  } = error;
 
   return res.status(statusCode).json(Object.assign({}, payload, { message }));
 }
