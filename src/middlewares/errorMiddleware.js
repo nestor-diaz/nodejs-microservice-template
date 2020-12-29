@@ -13,7 +13,7 @@ function errorMiddleware(err, req, res, next) {
     message,
   } = error;
 
-  return res.status(statusCode).json(Object.assign({}, payload, { message }));
+  return res.status(statusCode).json({ ...payload, message });
 }
 
 module.exports = errorMiddleware;

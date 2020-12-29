@@ -3,12 +3,11 @@ const customEnvVariables = {
     host: 'HOSTNAME',
     port: 'PORT',
   },
-  postgres: {
-    user: 'postgres',
-    password: 'Password.p1',
-    database: 'vacancies',
-    host: 'localhost',
-    port: '5433',
+  database: {
+    user: 'SQL_USER',
+    password: 'SQL_PASSWORD',
+    server: 'SQL_SERVER',
+    name: 'SQL_DATABASE',
   },
 };
 

@@ -1,15 +1,4 @@
 const defaultConfig = {
-  express: {
-    host: 'localhost',
-    port: '4000',
-  },
-  postgres: {
-    user: '',
-    password: '',
-    database: '',
-    host: '',
-    port: ,
-  },
   logger: {
     exitOnError: false,
     transports: {
@@ -21,6 +10,12 @@ const defaultConfig = {
         humanReadableUnhandledException: true,
       },
     },
+  },
+  database: {
+    user: '',
+    password: '',
+    server: '',
+    name: '',
   },
 };
 

@@ -8,12 +8,12 @@ const container = createContainer();
 
 container.loadModules(
   [
-    'src/controllers/**/*.js',
-    'src/repositories/**/*.js',
-    'src/repositories/postgres/**/*.js',
+    'src/controllers/*.js',
+    'src/repositories/*.js',
+    'src/database/*.js',
     'src/routes/**/*.js',
-    'src/services/**/*.js',
-    'src/utils/**/*.js',
+    'src/services/*.js',
+    'src/utils/*.js',
   ],
   {
     resolverOptions: {
